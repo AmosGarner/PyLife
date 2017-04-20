@@ -4,15 +4,15 @@ import matplotlib.pyplot as plot
 import matplotlib.animation as animation
 from helper import *
 
-def update(frameNum, img, grid, N):
+def update(frameNumber, image, grid, gridSize):
     newGrid = grid.copy()
-    for index in range(N):
-        for subIndex in range(N):
-            total = int((grid[index, (subIndex-1)%N] + grid[index, (subIndex+1)%N] +
-                         grid[(index-1)%N, subIndex] + grid[(index+1)%N, subIndex] +
-                         grid[(index-1)%N, (subIndex-1)%N] + grid[(index-1)%N, (subIndex+1)%N] +
-                         grid[(index+1)%N, (subIndex-1)%N] + grid[(index+1)%N, (subIndex+1)%N])/255)
-            # apply Conway's rules
+    for index in range(gridSize):
+        for subIndex in range(gridSize):
+            total = int((grid[index, (subIndex-1)%gridSize] + grid[index, (subIndex+1)%gridSize] +
+                         grid[(index-1)%gridSize, subIndex] + grid[(index+1)%gridSize, subIndex] +
+                         grid[(index-1)%gridSize, (subIndex-1)%gridSize] + grid[(index-1)%gridSize, (subIndex+1)%gridSize] +
+                         grid[(index+1)%gridSize, (subIndex-1)%gridSize] + grid[(index+1)%gridSize, (subIndex+1)%gridSize])/ON)
+
             if grid[index, subIndex]  == ON:
                 if (total < 2) or (total > 3):
                     newGrid[index, subIndex] = OFF
@@ -20,22 +20,22 @@ def update(frameNum, img, grid, N):
                 if total == 3:
                     newGrid[index, subIndex] = ON
 
-    img.set_data(newGrid)
+    image.set_data(newGrid)
     grid[:] = newGrid[:]
-    return img
+    return image
 
 def main():
     parser = argparse.ArgumentParser(description="Runs Conway's Game of Life simulation.")
-    parser.add_argument('--grid-size', dest='N', required=False)
+    parser.add_argument('--grid-size', dest='gridSize', required=False)
     parser.add_argument('--mov-file', dest='movfile', required=False)
     parser.add_argument('--interval', dest='interval', required=False)
     parser.add_argument('--glider', action='store_true', required=False)
     parser.add_argument('--gosper', action='store_true', required=False)
     args = parser.parse_args()
 
-    N = 100
-    if args.N and int(args.N) > 8:
-        N = int(args.N)
+    gridSize = 100
+    if args.gridSize and int(args.gridSize) > 8:
+        gridSize = int(args.gridSize)
 
     updateInterval = 50
     if args.interval:
@@ -44,17 +44,17 @@ def main():
     grid = np.array([])
 
     if args.glider:
-        grid = np.zeros(N*N).reshape(N, N)
+        grid = np.zeros(gridSize*gridSize).reshape(gridSize, gridSize)
         addGlider(1, 1, grid)
     elif args.gosper:
-        grid = np.zeros(N*N).reshape(N, N)
+        grid = np.zeros(gridSize*gridSize).reshape(gridSize, gridSize)
         addGosperGliderGun(10, 10, grid)
     else:
-        grid = randomGrid(N)
+        grid = randomGrid(gridSize)
 
     fig, ax = plot.subplots()
     img = ax.imshow(grid, interpolation='nearest')
-    ani = animation.FuncAnimation(fig, update, fargs=(img, grid, N, ),
+    ani = animation.FuncAnimation(fig, update, fargs=(img, grid, gridSize),
                                   frames = 10,
                                   interval=updateInterval,
                                   save_count=50)

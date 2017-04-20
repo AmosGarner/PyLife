@@ -147,11 +147,11 @@ def spawnValue(char, row, col, grid):
                           [ON, OFF, OFF, OFF],
                           [ON, ON, ON, ON],])
     if(char == 'v'):
-       value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+       value = np.array([[ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
+                          [OFF, ON, ON, OFF],])
     if(char == 'w'):
        value = np.array([[ON, OFF, OFF, ON],
                           [ON, OFF, OFF, ON],

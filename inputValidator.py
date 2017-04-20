@@ -1,6 +1,12 @@
+from alphaNumLib import *
+
 alphaNumArray = [alphaArray, numArray, specialArray]
+
 def validateInput(input):
-    return True
+    if(checkInAlpha and checkInNum and checkInSpecial):
+        return True
+    else:
+        return False
 
 def checkInAlpha(input):
     return True

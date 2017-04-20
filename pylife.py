@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plot
 import matplotlib.animation as animation
 from helper import *
+from inputValidator import validateInput
 
 def update(frameNumber, image, grid, gridSize):
     newGrid = grid.copy()
@@ -29,8 +30,9 @@ def main():
     parser.add_argument('--grid-size', dest='gridSize', required=False)
     parser.add_argument('--mov-file', dest='movfile', required=False)
     parser.add_argument('--interval', dest='interval', required=False)
-    parser.add_argument('--glider', action='store_true', required=False)
-    parser.add_argument('--gosper', action='store_true', required=False)
+    parser.add_argument('--glider', dest='glider', required=False)
+    parser.add_argument('--gosper', dest='gosper', required=False)
+    parser.add_argument('--display', dest='displayText', required=False)
     args = parser.parse_args()
 
     gridSize = 100
@@ -51,6 +53,10 @@ def main():
         addGosperGliderGun(10, 10, grid)
     else:
         grid = randomGrid(gridSize)
+
+    if args.displayText:
+        print(args.displayText)
+        print(validateInput(args.displayText))
 
     fig, ax = plot.subplots()
     img = ax.imshow(grid, interpolation='nearest')

@@ -7,24 +7,37 @@ from helper import *
 from displayTextSpawner import displayText
 from inputValidator import validateInput
 
+paused = True
+iteration = 0
+
 def update(frameNumber, image, grid, gridSize):
     newGrid = grid.copy()
-    for index in range(gridSize):
-        for subIndex in range(gridSize):
-            total = int((grid[index, (subIndex-1)%gridSize] + grid[index, (subIndex+1)%gridSize] +
-                         grid[(index-1)%gridSize, subIndex] + grid[(index+1)%gridSize, subIndex] +
-                         grid[(index-1)%gridSize, (subIndex-1)%gridSize] + grid[(index-1)%gridSize, (subIndex+1)%gridSize] +
-                         grid[(index+1)%gridSize, (subIndex-1)%gridSize] + grid[(index+1)%gridSize, (subIndex+1)%gridSize])/ON)
+    global paused
+    global iteration
 
-            if grid[index, subIndex]  == ON:
-                if (total < 2) or (total > 3):
-                    newGrid[index, subIndex] = OFF
-            else:
-                if total == 3:
-                    newGrid[index, subIndex] = ON
+    if paused is True and iteration > 0:
+        value = raw_input('Press any [Key] to start simulation:')
+        image.set_data(newGrid)
+        grid[:] = newGrid[:]
+        paused = False
+    else:
+        for index in range(gridSize):
+            for subIndex in range(gridSize):
+                total = int((grid[index, (subIndex-1)%gridSize] + grid[index, (subIndex+1)%gridSize] +
+                             grid[(index-1)%gridSize, subIndex] + grid[(index+1)%gridSize, subIndex] +
+                             grid[(index-1)%gridSize, (subIndex-1)%gridSize] + grid[(index-1)%gridSize, (subIndex+1)%gridSize] +
+                             grid[(index+1)%gridSize, (subIndex-1)%gridSize] + grid[(index+1)%gridSize, (subIndex+1)%gridSize])/ON)
+                if iteration > 0:
+                    if grid[index, subIndex]  == ON:
+                        if (total < 2) or (total > 3):
+                            newGrid[index, subIndex] = OFF
+                    else:
+                        if total == 3:
+                            newGrid[index, subIndex] = ON
+        image.set_data(newGrid)
+        grid[:] = newGrid[:]
+        iteration += 1
 
-    image.set_data(newGrid)
-    grid[:] = newGrid[:]
     return image
 
 def main():
@@ -60,6 +73,7 @@ def main():
 
     fig, ax = plot.subplots()
     img = ax.imshow(grid, interpolation='nearest')
+
     ani = animation.FuncAnimation(fig, update, fargs=(img, grid, gridSize),
                                   frames = 10,
                                   interval=updateInterval,

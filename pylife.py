@@ -2,6 +2,7 @@ import sys, argparse
 import numpy as np
 import matplotlib.pyplot as plot
 import matplotlib.animation as animation
+
 from helper import *
 from displayTextSpawner import displayText
 from inputValidator import validateInput
@@ -53,8 +54,7 @@ def main():
         grid = np.zeros(gridSize*gridSize).reshape(gridSize, gridSize)
         addGosperGliderGun(10, 10, grid)
     elif args.displayText and validateInput(args.displayText):
-        displayText(args.displayText)
-        grid = randomGrid(gridSize)
+        grid = displayText(args.displayText, gridSize)
     else:
         grid = randomGrid(gridSize)
 

@@ -6,8 +6,8 @@ ON = 255
 OFF = 0
 vals = [ON, OFF]
 
-def randomGrid(scale):
-    return np.random.choice(vals, scale*scale, p=[0.2, 0.8]).reshape(scale, scale)
+def randomGrid(gridSize):
+    return np.random.choice(vals, gridSize*gridSize, p=[0.2, 0.8]).reshape(gridSize, gridSize)
 
 def addGlider(row, col, grid):
     glider = np.array([[OFF, OFF, ON],

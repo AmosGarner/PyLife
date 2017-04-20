@@ -1,10 +1,21 @@
 import numpy as np
 
-def displayText(input):
-    print(generateBlankGroup())
+ON = 255
+OFF = 0
+vals = [ON, OFF]
 
-def spawnValue(value, position):
-    return False
+def displayText(input, gridSize):
+    grid = generateBlankGroup(gridSize)
+    grid = spawnValue('A', gridSize/2, gridSize/2, grid)
+    return grid
 
-def generateBlankGroup():
-    return np.zeros(4*4).reshape(4*4)
+def spawnValue(value, row, col, grid):
+    value = np.array([[OFF, ON, ON, OFF],
+                       [ON, OFF, OFF, ON],
+                       [ON, ON, ON, ON],
+                       [ON, OFF, OFF, ON],])
+    grid[row:row+4, col:col+4] = value
+    return grid
+
+def generateBlankGroup(gridSize):
+    return np.zeros(gridSize*gridSize).reshape(gridSize, gridSize)

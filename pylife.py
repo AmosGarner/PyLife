@@ -2,6 +2,7 @@ import sys, argparse
 import numpy as np
 import matplotlib.pyplot as plot
 import matplotlib.animation as animation
+from helper import *
 
 ON = 255
 OFF = 0

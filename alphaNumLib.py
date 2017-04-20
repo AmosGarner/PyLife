@@ -41,7 +41,7 @@ numArray = [
 ]
 
 specialArray = [
-' ',
+'_',
 '!',
 '.',
 '?'

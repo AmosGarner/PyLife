@@ -6,8 +6,17 @@ vals = [ON, OFF]
 
 def displayText(input, gridSize):
     grid = generateBlankGroup(gridSize)
+    index = 1
+    x = gridSize / 2
     for value in list(input):
-        grid = spawnValue(value, gridSize/2, gridSize/2, grid)
+        print(5 * index)
+        print(gridSize)
+        if 5*index >= gridSize:
+            index = 1
+            x = gridSize/2 + 6
+
+        grid = spawnValue(value, x, 5 * index, grid)
+        index += 1
     return grid
 
 def spawnValue(char, row, col, grid):
@@ -227,7 +236,7 @@ def spawnValue(char, row, col, grid):
                           [ON, ON, ON, ON],
                           [ON, OFF, OFF, OFF],
                           [ON, OFF, OFF, OFF],])
-    if(char == ' '):
+    if(char == '_'):
        value = np.array([[OFF, OFF, OFF, OFF],
                           [OFF, OFF, OFF, OFF],
                           [OFF, OFF, OFF, OFF],
@@ -251,7 +260,6 @@ def spawnValue(char, row, col, grid):
                           [OFF, OFF, OFF, OFF],
                           [OFF, ON, ON, OFF],
                           [OFF, ON, ON, OFF],])
-
 
     grid[row-2:row+3, col-2:col+2] = value
     return grid

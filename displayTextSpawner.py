@@ -227,15 +227,15 @@ def spawnValue(char, row, col, grid):
     if(char == '8'):
        value = np.array([[ON, ON, ON, ON],
                           [ON, OFF, OFF, ON],
-                          [ON, ON, ON, OFF],
+                          [ON, ON, ON, ON],
                           [ON, OFF, OFF, ON],
                           [ON, ON, ON, ON],])
     if(char == '9'):
        value = np.array([[ON, ON, ON, ON],
                           [ON, OFF, OFF, ON],
                           [ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, OFF, OFF, OFF],])
+                          [ON, ON, OFF, OFF],
+                          [ON, ON, OFF, OFF],])
     if(char == '_'):
        value = np.array([[OFF, OFF, OFF, OFF],
                           [OFF, OFF, OFF, OFF],

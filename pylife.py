@@ -67,7 +67,12 @@ def main():
         grid = np.zeros(gridSize*gridSize).reshape(gridSize, gridSize)
         addGosperGliderGun(10, 10, grid)
     elif args.displayText and validateInput(args.displayText):
-        grid = displayText(args.displayText, gridSize)
+        if args.displayText == 'alphanumspec':
+            grid = displayText('abcdefghijklmnopqrstuvwxyz_0123456789_', gridSize)
+        elif args.displayText == 'david':
+            grid = displayText('happy_birthday____david!!!!', gridSize)
+        else:
+            grid = displayText(args.displayText, gridSize)
     else:
         grid = randomGrid(gridSize)
 

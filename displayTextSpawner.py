@@ -13,8 +13,9 @@ def spawnValue(value, row, col, grid):
     value = np.array([[OFF, ON, ON, OFF],
                        [ON, OFF, OFF, ON],
                        [ON, ON, ON, ON],
+                       [ON, OFF, OFF, ON],
                        [ON, OFF, OFF, ON],])
-    grid[row:row+4, col:col+4] = value
+    grid[row-2:row+3, col-2:col+2] = value
     return grid
 
 def generateBlankGroup(gridSize):

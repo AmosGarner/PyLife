@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plot
 import matplotlib.animation as animation
 from helper import *
+from displayTextSpawner import displayText
 from inputValidator import validateInput
 
 def update(frameNumber, image, grid, gridSize):
@@ -51,12 +52,11 @@ def main():
     elif args.gosper:
         grid = np.zeros(gridSize*gridSize).reshape(gridSize, gridSize)
         addGosperGliderGun(10, 10, grid)
+    elif args.displayText and validateInput(args.displayText):
+        displayText(args.displayText)
+        grid = randomGrid(gridSize)
     else:
         grid = randomGrid(gridSize)
-
-    if args.displayText:
-        print(args.displayText)
-        print(validateInput(args.displayText))
 
     fig, ax = plot.subplots()
     img = ax.imshow(grid, interpolation='nearest')

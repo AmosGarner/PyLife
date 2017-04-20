@@ -187,28 +187,28 @@ def spawnValue(char, row, col, grid):
                           [ON, ON, ON, ON],])
     if(char == '3'):
        value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
+                          [OFF, OFF, OFF, ON],
+                          [OFF, ON, ON, ON],
+                          [OFF, OFF, OFF, ON],
                           [ON, ON, ON, ON],])
     if(char == '4'):
-       value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+       value = np.array([[ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
+                          [ON, ON, ON, ON],
+                          [OFF, OFF, OFF, ON],
+                          [OFF, OFF, OFF, ON],])
     if(char == '5'):
        value = np.array([[ON, ON, ON, ON],
                           [ON, OFF, OFF, OFF],
                           [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+                          [OFF, OFF, OFF, ON],
+                          [ON, ON, ON, OFF],])
     if(char == '6'):
-       value = np.array([[ON, ON, ON, ON],
+       value = np.array([[ON, ON, OFF, OFF],
                           [ON, OFF, OFF, OFF],
                           [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+                          [ON, OFF, OFF, ON],
+                          [ON, ON, ON, OFF],])
     if(char == '7'):
        value = np.array([[ON, ON, ON, ON],
                           [OFF, OFF, OFF, ON],

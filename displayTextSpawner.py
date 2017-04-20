@@ -150,39 +150,39 @@ def spawnValue(char, row, col, grid):
                           [ON, OFF, OFF, OFF],
                           [ON, ON, ON, ON],])
     if(char == 'x'):
-       value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+       value = np.array([[ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
+                          [OFF, ON, ON, OFF],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],])
     if(char == 'y'):
-       value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+       value = np.array([[ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
+                          [OFF, ON, ON, OFF],
+                          [OFF, ON, OFF, OFF],
+                          [OFF, ON, OFF, OFF],])
     if(char == 'z'):
        value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
+                          [OFF, OFF, ON, OFF],
+                          [OFF, ON, OFF, OFF],
                           [ON, OFF, OFF, OFF],
                           [ON, ON, ON, ON],])
     if(char == '0'):
        value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
                           [ON, ON, ON, ON],])
     if(char == '1'):
-       value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
+       value = np.array([[OFF, ON, ON, OFF],
                           [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+                          [OFF, ON, ON, OFF],
+                          [OFF, ON, ON, OFF],
+                          [OFF, ON, ON, OFF],])
     if(char == '2'):
        value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
+                          [OFF, OFF, OFF, ON],
+                          [ON, ON, ON, ON],
                           [ON, OFF, OFF, OFF],
                           [ON, ON, ON, ON],])
     if(char == '3'):

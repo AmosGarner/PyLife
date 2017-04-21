@@ -59,92 +59,92 @@ def spawnValue(char, row, col, grid):
     if(char == 'g'):
        value = np.array([[ON, ON, ON, ON],
                           [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
+                          [ON, OFF, ON, ON],
+                          [ON, OFF, OFF, ON],
                           [ON, ON, ON, ON],])
     if(char == 'h'):
-       value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+       value = np.array([[ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
+                          [ON, ON, ON, ON],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],])
     if(char == 'i'):
        value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
+                          [OFF, ON, ON, OFF],
+                          [OFF, ON, ON, OFF],
+                          [OFF, ON, ON, OFF],
                           [ON, ON, ON, ON],])
     if(char == 'j'):
-       value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
+       value = np.array([[OFF, ON, ON, ON],
+                          [OFF, OFF, ON, ON],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
                           [ON, ON, ON, ON],])
     if(char == 'k'):
-       value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+       value = np.array([[ON, OFF, OFF, ON],
+                          [ON, OFF, ON, OFF],
+                          [ON, ON, OFF, OFF],
+                          [ON, OFF, ON, OFF],
+                          [ON, OFF, OFF, ON],])
     if(char == 'l'):
-       value = np.array([[ON, ON, ON, ON],
+       value = np.array([[ON, ON, OFF, OFF],
                           [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
                           [ON, OFF, OFF, OFF],
+                          [ON, OFF, OFF, ON],
                           [ON, ON, ON, ON],])
     if(char == 'm'):
        value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+                          [ON, ON, ON, ON],
+                          [ON, OFF, ON, ON],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],])
     if(char == 'n'):
-       value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+       value = np.array([[ON, ON, OFF, ON],
+                          [ON, ON, OFF, ON],
+                          [ON, OFF, ON, ON],
+                          [ON, OFF, ON, ON],
+                          [ON, OFF, OFF, ON],])
     if(char == 'o'):
        value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
                           [ON, ON, ON, ON],])
     if(char == 'p'):
        value = np.array([[ON, ON, ON, ON],
+                          [ON, OFF, OFF, ON],
+                          [ON, ON, ON, ON],
                           [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+                          [ON, OFF, OFF, OFF],])
     if(char == 'q'):
        value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, ON, ON],
                           [ON, ON, ON, ON],])
     if(char == 'r'):
        value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
+                          [ON, OFF, OFF, ON],
                           [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+                          [ON, OFF, ON, OFF],
+                          [ON, OFF, OFF, ON],])
     if(char == 's'):
-       value = np.array([[ON, ON, ON, ON],
+       value = np.array([[OFF, ON, ON, ON],
                           [ON, OFF, OFF, OFF],
                           [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+                          [OFF, OFF, OFF, ON],
+                          [ON, ON, ON, OFF],])
     if(char == 't'):
        value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, ON],])
+                          [ON, ON, ON, ON],
+                          [OFF, OFF, ON, OFF],
+                          [OFF, ON, ON, OFF],
+                          [OFF, ON, ON, OFF],])
     if(char == 'u'):
-       value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, OFF],
-                          [ON, ON, ON, OFF],
-                          [ON, OFF, OFF, OFF],
+       value = np.array([[ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, OFF, ON],
+                          [ON, OFF, ON, ON],
                           [ON, ON, ON, ON],])
     if(char == 'v'):
        value = np.array([[ON, OFF, OFF, ON],
@@ -157,7 +157,7 @@ def spawnValue(char, row, col, grid):
                           [ON, OFF, OFF, ON],
                           [ON, ON, OFF, ON],
                           [ON, ON, ON, ON],
-                          [OFF, OFF, OFF, OFF],])
+                          [ON, ON, OFF, ON],])
     if(char == 'x'):
        value = np.array([[ON, OFF, OFF, ON],
                           [ON, OFF, OFF, ON],
@@ -178,9 +178,9 @@ def spawnValue(char, row, col, grid):
                           [ON, ON, ON, ON],])
     if(char == '0'):
        value = np.array([[ON, ON, ON, ON],
-                          [ON, OFF, OFF, ON],
-                          [ON, OFF, OFF, ON],
-                          [ON, OFF, OFF, ON],
+                          [ON, ON, OFF, ON],
+                          [ON, ON, OFF, ON],
+                          [ON, OFF, ON, ON],
                           [ON, ON, ON, ON],])
     if(char == '1'):
        value = np.array([[OFF, ON, ON, OFF],

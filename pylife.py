@@ -70,7 +70,7 @@ def main():
         if args.displayText == 'alphanumspec':
             grid = displayText('abcdefghijklmnopqrstuvwxyz_0123456789_', gridSize)
         elif args.displayText == 'david':
-            grid = displayText('happy_birthday____david!!!!', gridSize)
+            grid = displayText('happy_birthday___david!!!!', gridSize)
         else:
             grid = displayText(args.displayText, gridSize)
     else:

@@ -26,3 +26,6 @@ To exit the program either press your OS's close program button or kill the proc
     * ```--display alphanumspec```: will generate a plot of all the character currently mapped in the system
 * ```--interval```: The speed at which the animation updates (default: 50 Milliseconds)
 * all parameters are optional and the program can be run just by using: ```python pylife.py```
+
+### Outside Resources:
+* Wiki page for Conway's Game: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life

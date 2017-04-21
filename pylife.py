@@ -79,6 +79,8 @@ def main():
     fig, ax = plot.subplots()
     img = ax.imshow(grid, interpolation='nearest')
 
+    plot.title("PyLife V1.0")
+
     ani = animation.FuncAnimation(fig, update, fargs=(img, grid, gridSize),
                                   frames = 10,
                                   interval=updateInterval,

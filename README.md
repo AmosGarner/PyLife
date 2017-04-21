@@ -16,13 +16,13 @@ Clone project repository into project directory:
 
 EX: ```python pylife.py --display alphanumspec --grid-size 135 --interval 100```
 
-When you run the program the program window will pop up with the initalized data projected on the screen followed by a request for a key press in your console to run the simulation.
+When you run the program the program window will pop up with the starting data projected on the screen followed by a request for a key press in your console to run the simulation.
 
-To exit the program either press your OS's close program buttom or kill the process using the CLI.
+To exit the program either press your OS's close program button or kill the process using the CLI.
 
 ## Parameters:
 * ```--grid-size```: Changes the area of the simulation (default: 100)
 * ```--display```: Displays a string of text passed in as a parameter value
-    * ```--display alphanumspec```: will generate a plot of all the character currently mapped in the system 
+    * ```--display alphanumspec```: will generate a plot of all the character currently mapped in the system
 * ```--interval```: The speed at which the animation updates (default: 50 Milliseconds)
 * all parameters are optional and the program can be run just by using: ```python pylife.py```

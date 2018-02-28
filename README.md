@@ -5,7 +5,6 @@ Conway's game of life written in Python as a birthday present for a colleague. C
 * Name: PyLife
 * Version: 1.0
 * Author: Amos Garner
-* License: MIT
 
 ## Install Commands:
 Clone project repository into project directory:
